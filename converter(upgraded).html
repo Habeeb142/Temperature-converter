@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Temp conv</title>
+	<script>
+		function con()
+		{
+			
+			if (drp.value=='cl' && drp2.value=='kl' && sv.value=="")
+			 {
+			 	sv.value=parseFloat(fv.value)+273
+			 }
+			if (drp.value=="cl" && drp2.value=="kl" && fv.value=="")
+			 {
+			 	fv.value=parseFloat(sv.value)-273
+			 }
+			 if (drp.value=='kl' && drp2.value=='cl' && sv.value=="") 
+			 {
+			 	sv.value=parseFloat(fv.value)-273
+			 }
+			 if (drp.value=='kl' && drp2.value=='cl' && fv.value=="") 
+			 {
+			 	fv.value=parseFloat(sv.value)+273
+			 }
+			  if (drp.value=='cl' && drp2.value=='fr' && sv.value=="")
+			 {
+			 	sv.value=parseFloat(fv.value)*1.8+32
+			 }
+			  if (drp.value=='cl' && drp2.value=='fr' && fv.value=="")
+			 {
+			 	fv.value=(parseFloat(sv.value)-32)/1.8
+			 }
+			  if (drp.value=='fr' && drp2.value=='cl' && sv.value=="")
+			 {
+			 	sv.value=(parseFloat(fv.value)-32)/1.8
+			 }
+			 if (drp.value=='fr' && drp2.value=='cl' && fv.value=="")
+			 {
+			 	fv.value=parseFloat(sv.value)*1.8+32
+			 }
+			  if (drp.value=='fr' && drp2.value=='kl' && sv.value=="")
+			 {
+			 	sv.value=(parseFloat(fv.value)+459.67)*0.5556
+			 }
+			 if (drp.value=='fr' && drp2.value=='kl' && fv.value=="")
+			 {
+			 	fv.value=(parseFloat(sv.value)/0.5556)-459.67
+			 }
+			 if (drp.value=='kl' && drp2.value=='fr' && sv.value=="")
+			 {
+			 	sv.value=(parseFloat(fv.value)/0.5556)-459.67
+			 }
+			  if (drp.value=='kl' && drp2.value=='fr' && fv.value=="")
+			 {
+			 	fv.value=(parseFloat(sv.value)+459.67)*0.5556
+			 }
+			
+		}
+	</script>
+</head>
+
+<body>
+	<table border="1" cellpadding="30" align="center">
+		<tr>
+			<th colspan="2" bgcolor="green">TEMPERATURE CONVERTER</th>
+		</tr>
+		<tr>
+			<td bgcolor="grey">
+			<select id="drp" value="">
+				<option id="cl" value="cl">Celcius</option>
+				<option id="kl" value="kl">Kelvin</option>
+				<option id="fr" value="fr">Fahreheit</option>
+			</select>
+		    </td>
+		   <td bgcolor="cream" colspan="2">
+			<input type="number" name="fv" id="fv">
+	   	   </td>
+	   	</tr>
+ 
+		<tr>
+			<td bgcolor="cream">
+			<select id="drp2" value="drp2">
+				<option id="cl" value="cl">Celcius</option>
+				<option id="kl" value="kl">Kelvin</option>
+				<option id="fr" value="fr">Fahreheit</option>
+			</select>
+			</td>
+			<td bgcolor="grey" colspan="2">
+			<input type="number" name="sv" id="sv">
+		    </td>
+		</tr>
+
+		
+		<tr><td colspan="2" bgcolor="blue">
+			<input type="button" name="Convert" value="Convert" onclick="con()">
+		</td></tr>
+	</table>
+
+</body>
+</html>

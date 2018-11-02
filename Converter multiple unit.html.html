@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style>
+	table
+	{
+		background-color: #dfe3ee;
+		align-self: : middle;
+		border-color: #dfe3ee;
+		border-width: 20px
+	}
+
+	button
+	{
+		background-color: #3b5998
+	}
+	</style>
+	<script>
+		
+		var tempoption = "<option value=kelvin>Kelvin</option><option value=celcius>Celcius</option>" 
+		var moption = "<option value=kg>Kilogram</option><option value=g>Gramms</option>"
+		var toption = "<option value=hr>Hour</option><option value=mn>Minutes</option><option value=sec>Seconds</option>"
+
+		function changer() { 
+			if (unit.value=='temp') {
+				from.innerHTML=tempoption
+				to.innerHTML=tempoption
+				}
+
+			if (unit.value=='m') {
+				from.innerHTML=moption
+				to.innerHTML=moption
+			}
+
+			if (unit.value=='t') {
+				from.innerHTML=toption
+				to.innerHTML=toption
+			}
+		}
+
+		function Convert() {
+			if (from.value=='kelvin' && to.value=='celcius') 
+				sn.value= fn.value-273
+				
+
+			if (from.value=='celcius' && to.value=='kelvin') 
+				sn.value= parseFloat(fn.value)+273
+				
+
+			if (from.value=='kelvin' && to.value=='celcius') 
+				sn.value= fn.value-273
+				
+
+			if (from.value=='kg' && to.value=='g') 
+				sn.value=fn.value*1000
+			
+
+			if (from.value=='g' && to.value=='kg') 
+				sn.value=fn.value/1000
+			
+
+			if(from.value=='hr' && to.value== 'mn')
+				sn.value=fn.value*60
+			
+
+			if(from.value=='mn' && to.value== 'hr')
+				sn.value=fn.value/60
+			
+
+			if(from.value=='hr' && to.value== 'sec')
+				sn.value=fn.value*3600
+			
+
+			if(from.value=='sec' && to.value== 'hr')
+				sn.value=fn.value/3600
+			
+
+			if(from.value=='mn' && to.value== 'sec')
+				sn.value=fn.value*60
+			
+
+			if(from.value=='sec' && to.value== 'mn')
+				sn.value=fn/60
+			
+		}
+
+	</script>
+</head>
+<body>
+	<table style="font-family: arial" align="center" border="1">
+		<tr style="color: #8b9dc3"><td align="middle" style="font-size: 40px">Converter</td></tr>
+		<tr>
+			<td align="middle">
+				<select id="unit" onchange="changer()" style="font-size: 25px">
+					<option>Unit</option>		 
+					<option value="temp">Temperature</option>
+					<option value="m">Mass</option>
+					<option value="t">Time</option>
+				</select>
+			</td>
+			
+		</tr>
+
+		<tr>
+			<td>
+				<select id="from" style="font-size: 25px">
+					<option>
+						from
+					</option>
+				</select>
+				<input type="number" name="" id="fn" style="font-size: 25px">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<select id="to" style="font-size: 25px">
+					<option>to</option>
+				 </select>
+				 <input type="number" name="" id="sn" style="font-size: 25px">
+			</td>
+		</tr>
+
+		<tr>
+			<td align="center">
+				<button onclick="Convert()" style="font-size: 25px">Convert</button>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

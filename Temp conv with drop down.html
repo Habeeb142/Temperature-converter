@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>r
+	<title></title>
+	<script>
+		function con()
+		{
+
+			ft = dn1.value;
+			st = dn2.value;
+
+			if(ft == 'k' && st== 'c')
+			{
+				cl.value = parseInt(kl.value) -273;
+			}
+			if(ft == 'c' && st == 'k')
+			{
+				cl.value = parseInt(kl.value) + 273;
+			}	
+		}
+	</script>
+</head>
+<body>
+
+	<table align="center">
+
+		<tr><td><h2 style="color: green">CONVERTER</h2></td></tr><br>
+
+		<tr><td>
+			<select id="dn1" value="dn1">
+				<option id="k1" value="k">Kelvin</option>
+				<option id="c1" value="c">Celcius</option>
+				<option id="f1" value="f">fahreheit</option>
+			</select>
+			<input type="number" name="kl" id="kl">
+		<td></td>
+
+		<tr><td>
+			<select id="dn2">
+				<option id="c" value="c">Celsius</option>
+				<option id="k" value="k">kelvin</option>
+				<option id="f" value="f">fahreheit</option>
+			</select>
+			<input type="number" name="cl" id="cl"></td></tr>
+	  	<tr><td><input type="button" name="Convert" value="Convert" onclick="con()"></td></tr>
+	
+
+	</table>
+
+</body>
+</html>
